@@ -105,7 +105,7 @@ const starWarsCharacters = [
 Crea una variabile chiamata "characters" e inserisci un array vuoto
 */
 
-const characters = [{}];
+const characters = [];
 
 // console.log(starWarsCharacters.characters);
 // for (let i = 0; i < starWarsCharacters.length; i++) {
@@ -120,7 +120,7 @@ Come risultato dovresti ottenere qualcosa di simile: ["Luke Skywalker", "C-3PO",
 */
 
 // const selectedName=starWarsCharacters
-console.log("Exercise 2");
+console.log("\nExercise 2\n");
 for (let i = 0; i < starWarsCharacters.length; i++) {
   characters.push(starWarsCharacters[i].name);
 }
@@ -131,24 +131,17 @@ console.log(characters);
   {name: Leia Organa, hair_color: "brown", eye_color: "brown"}
 */
 
-// starWarsCharacters.female = [
-//   {
-//     name: "Leia Organa",
-//     hair_color: "brown",
-//     eye_color: "brown",
-//   },
-//   {
-//     name: "Beru Whitesun lars",
-//     hair_color: "brown",
-//     eye_color: "blue",
-//   },
-// ];
+console.log("\nExercise 3\n");
+let femaleCharacters = [];
+for (let i = 0; i < starWarsCharacters.length; i++) {
+  let personaggioSingolo = starWarsCharacters[i];
+  if (personaggioSingolo.gender === "female") {
+    delete personaggioSingolo.height;
+    delete personaggioSingolo.mass;
+    delete personaggioSingolo.skin_color;
+    delete personaggioSingolo.gender;
 
-console.log("Exercise 3");
-const femaleCharacters = [{}];
-for (i = 0; i < starWarsCharacters.length; i++) {
-  if (starWarsCharacters[i].gender === "female") {
-    femaleCharacters.push(starWarsCharacters[i]);
+    femaleCharacters.push(personaggioSingolo);
   }
 }
 console.log(femaleCharacters);
@@ -158,15 +151,42 @@ console.log(femaleCharacters);
   ognuna di queste proprietà contiene un array vuoto
 */
 
-console.log("Exercise 4");
-// const eyeColor = [{""}];
-
-// const eyeColor = [{"blue", "yellow","brown", "red", "blue-gray "}];
+console.log("\nExercise 4\n");
+const eyeColor = {
+  blue: [],
+  yellow: [],
+  brown: [],
+  red: [],
+  "blue-gray": [],
+};
+console.log(eyeColor);
 
 /* ESERCIZIO 5
   Inserisci l'oggetto dei personaggi in "starWarsCharacters" nell'array corrispondente al colore dei loro occhi nell'oggetto "eyeColor" precedentemente creato.
   Utilizza uno switch statement per determinare in quale proprietà inserire il personaggio
 */
+console.log("\nExercise 5\n");
+for (i = 0; i < starWarsCharacters.length; i++) {
+  switch (starWarsCharacters[i].eyeColor) {
+    case "blue":
+      eyeColor.blue.push(starWarsCharacters[i]);
+      break;
+    case "yellow":
+      eyeColor.yellow.push(starWarsCharacters[i]);
+      break;
+    case "brown":
+      eyeColor.brown.push(starWarsCharacters[i]);
+      break;
+    case "red":
+      eyeColor.red.push(starWarsCharacters[i]);
+      break;
+    case "blue-gray":
+      eyeColor["blue-gray"].push(starWarsCharacters[i]);
+      break;
+    default:
+      console.log("Non ha gli occhi");
+  }
+}
 
 /* ESERCIZIO 6
   Usa un while loop per calcolare la massa totale dell'equipaggio
