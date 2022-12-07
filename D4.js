@@ -167,7 +167,8 @@ console.log(eyeColor);
 */
 console.log("\nExercise 5\n");
 for (i = 0; i < starWarsCharacters.length; i++) {
-  switch (starWarsCharacters[i].eyeColor) {
+  let coloreOcchi = starWarsCharacters[i].eye_Color;
+  switch (coloreOcchi) {
     case "blue":
       eyeColor.blue.push(starWarsCharacters[i]);
       break;
@@ -192,6 +193,16 @@ for (i = 0; i < starWarsCharacters.length; i++) {
   Usa un while loop per calcolare la massa totale dell'equipaggio
 */
 
+// let conta = 0;
+// let totMassa = 0;
+// let massaPersonaggio = [];
+// console.log("\nExercise 6\n");
+// while (conta < starWarsCharacters.length) {
+//   massaPersonaggio.push(starWarsCharacters[i].mass);
+//   totMassa += massaPersonaggio;
+// }
+// console.log(totMassa);
+
 /* ESERCIZIO 7
 
 Crea uno switch statement per rivelare la tipologia di carico, utilizzando la massa totale, di un'impotetica astronave contenente i personaggi dell'array "starWarsCharacters"
@@ -210,6 +221,13 @@ Una volta fatto, modifica la massa di qualche elemento dell'equipaggio e vedi se
 
 Usa un for loop per cambiare il valore della proprietà "gender" di alcuni personaggi dal valore "n/a" a "robot" (Tip: puoi creare un nuovo array, o tentare la riassegnazione del valore corrispondente)
 */
+console.log("\nExercise 8\n");
+for (i = 0; i < starWarsCharacters.length; i++) {
+  if (starWarsCharacters[i].gender == "n/a") {
+    starWarsCharacters[i].gender = "robot";
+  }
+}
+console.log(starWarsCharacters);
 
 /* EXTRA ESERCIZIO 9
 
@@ -220,6 +238,16 @@ Usa uno più for loop per raggiungere il risultato
 
 Una volta fatto, crea un console.log() per controllare la proprietà length di "characters" prima e dopo l'operazione
 */
+console.log("\nExercise 9\n");
+console.log(characters.length);
+for (i = 0; i < starWarsCharacters.length; i++) {
+  if (characters[i] == femaleCharacters[i]) {
+    delete characters[i];
+  }
+}
+characters.concat(characters);
+console.log(starWarsCharacters);
+console.log(characters.length);
 
 /* EXTRA ESERCIZIO 10
 
